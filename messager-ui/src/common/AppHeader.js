@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 import './AppHeader.css';
 import pollIcon from '../poll.svg';
+import {Redirect} from 'react-router-dom'
 import {Layout, Menu, Dropdown, Icon} from 'antd';
 import {signup} from "../util/APIUtils";
 
@@ -20,6 +21,14 @@ class AppHeader extends Component {
         if (key === "logout") {
             this.props.onLogout();
         }
+    }
+
+    redirectToLogin = () => {
+        this.props.history.push("/login");
+    }
+
+    redirectToSignup = () => {
+        this.props.history.push("/signup");
     }
 
     render() {
@@ -60,9 +69,11 @@ class AppHeader extends Component {
                         <Link to="/">Messager</Link>
                     </div>
                     <div className="navbar-auth-buttons">
-                        <button type="button" className="btn btn-default"><span>Войти</span>
+                        <button onClick={this.redirectToLogin} type="button" className="btn btn-default">
+                            <span>Войти</span>
                         </button>
-                        <button id={'signup'} type="button" className="btn btn-default"><span>Регистрация</span></button>
+                        <button id={'signup'} onClick={this.redirectToSignup} type="button" className="btn btn-default"><span>Регистрация</span>
+                        </button>
                     </div>
                 </div>
             </Header>
@@ -70,7 +81,9 @@ class AppHeader extends Component {
     }
 }
 
-function ProfileDropdownMenu(props) {
+function
+
+ProfileDropdownMenu(props) {
     const dropdownMenu = (
         <Menu onClick={props.handleMenuClick} className="profile-dropdown-menu">
             <Menu.Item key="user-info" className="dropdown-item" disabled>

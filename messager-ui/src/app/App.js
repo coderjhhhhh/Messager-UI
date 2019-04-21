@@ -40,7 +40,7 @@ class App extends Component {
       duration: 3,
     });    
   }
-d
+
   loadCurrentUser() {
     this.setState({
       isLoading: true
