@@ -1,5 +1,5 @@
 {
-  "name": "messager-ui-client",
+  "name": "messager-ui",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
