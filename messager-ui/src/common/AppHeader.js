@@ -35,30 +35,22 @@ class AppHeader extends Component {
         let menuItems;
         if (this.props.currentUser) {
             menuItems = [
-                <Menu.Item key="/">
-                    <Link to="/">
-                        <Icon type="home" className="nav-icon"/>
-                    </Link>
-                </Menu.Item>,
-                <Menu.Item key="/poll/new">
-                    <Link to="/poll/new">
-                        <img src={pollIcon} alt="poll" className="poll-icon"/>
-                    </Link>
-                </Menu.Item>,
-                <Menu.Item key="/profile" className="profile-menu">
-                    <ProfileDropdownMenu
-                        currentUser={this.props.currentUser}
-                        handleMenuClick={this.handleMenuClick}/>
-                </Menu.Item>
+                <div className="navbar-auth-buttons">
+                    <button onClick={showProfileMenu} type="button" className="btn btn-default">
+                        <span>Профиль</span>
+                    </button>
+                </div>
             ];
         } else {
             menuItems = [
-                <Menu.Item key="/login">
-                    <Link to="/login">Войти</Link>
-                </Menu.Item>,
-                <Menu.Item key="/signup">
-                    <Link to="/signup">Зарегистрироваться</Link>
-                </Menu.Item>
+                <div className="navbar-auth-buttons">
+                    <button onClick={this.redirectToLogin} type="button" className="btn btn-default">
+                        <span>Войти</span>
+                    </button>
+                    <button id={'signup'} onClick={this.redirectToSignup} type="button" className="btn btn-default">
+                        <span>Регистрация</span>
+                    </button>
+                </div>
             ];
         }
 
@@ -68,22 +60,17 @@ class AppHeader extends Component {
                     <div className="app-title">
                         <Link to="/">Messager</Link>
                     </div>
-                    <div className="navbar-auth-buttons">
-                        <button onClick={this.redirectToLogin} type="button" className="btn btn-default">
-                            <span>Войти</span>
-                        </button>
-                        <button id={'signup'} onClick={this.redirectToSignup} type="button" className="btn btn-default"><span>Регистрация</span>
-                        </button>
-                    </div>
+                    {menuItems}
                 </div>
             </Header>
         );
     }
 }
 
-function
+function showProfileMenu() {
+}
 
-ProfileDropdownMenu(props) {
+function ProfileDropdownMenu(props) {
     const dropdownMenu = (
         <Menu onClick={props.handleMenuClick} className="profile-dropdown-menu">
             <Menu.Item key="user-info" className="dropdown-item" disabled>
