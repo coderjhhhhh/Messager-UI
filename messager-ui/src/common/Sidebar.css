@@ -63,9 +63,31 @@ Note: Beware of modifying this element as it can break the animations - you shou
     height: 40px;
 }
 
-.bm-overlay{
+.bm-overlay {
     opacity: 0 !important;
 }
+
+.menu-item {
+    display: flex !important;
+    padding: 0.5rem 1.0rem 0.5rem 1.0rem;
+}
+
 .menu-item--small {
+    width: 30px;
+}
+
+.ms-avatar--size-30 {
+    height: 2rem;
+    width: 2rem;
+    margin: 0px !important;
+}
+
+.ms-avatar {
+    background-color: inherit;
+    position: relative;
+    padding-right: 10px;
+}
+
+.ms-img {
     width: 30px;
 }
