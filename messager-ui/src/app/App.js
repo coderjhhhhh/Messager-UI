@@ -16,6 +16,7 @@ import Signup from '../user/signup/Signup';
 import Profile from '../user/profile/Profile';
 import AppHeader from '../common/AppHeader';
 import Sidebar from '../common/Sidebar'
+import Usermenu from '../common/Usermenu'
 import NotFound from '../common/NotFound';
 import LoadingIndicator from '../common/LoadingIndicator';
 import PrivateRoute from '../common/PrivateRoute';
@@ -101,6 +102,7 @@ class App extends Component {
                            onLogout={this.handleLogout}/>
                 <Sidebar className="sidebar"/>
                 <Content className="app-content">
+                    <Usermenu className="usermenu" onLogout={this.handleLogout}/>
                     <div className="container">
                         <Switch>
                             <Route exact path="/"

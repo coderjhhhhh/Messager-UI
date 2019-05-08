@@ -4,7 +4,6 @@ import {
     withRouter
 } from 'react-router-dom';
 import './AppHeader.css';
-import pollIcon from '../poll.svg';
 import {Redirect} from 'react-router-dom'
 import {Layout, Menu, Dropdown, Icon} from 'antd';
 import {signup} from "../util/APIUtils";
@@ -31,13 +30,17 @@ class AppHeader extends Component {
         this.props.history.push("/signup");
     }
 
+    redirectToProfile = () => {
+        this.props.history.push(`/users/${this.props.currentUser.username}`);
+    }
+
     render() {
         let menuItems;
         if (this.props.currentUser) {
             menuItems = [
                 <div className="navbar-auth-buttons">
-                    <button onClick={showProfileMenu} type="button" className="btn btn-default">
-                        <span>Профиль</span>
+                    <button onClick={this.redirectToProfile} type="button" className="btn btn-default">
+                        <span>{this.props.currentUser.username}</span>
                     </button>
                 </div>
             ];
@@ -65,9 +68,6 @@ class AppHeader extends Component {
             </Header>
         );
     }
-}
-
-function showProfileMenu() {
 }
 
 function ProfileDropdownMenu(props) {
