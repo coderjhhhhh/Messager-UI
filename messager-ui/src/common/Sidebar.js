@@ -7,9 +7,6 @@ class Sidebar extends Component {
         event.preventDefault();
     }
 
-
-
-
     //TODO: Сделать кастомные картинки, а не задавать их жестко в коде
     render() {
         return (

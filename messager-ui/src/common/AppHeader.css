@@ -20,8 +20,11 @@
     position: fixed;
     background-color: #4041A6 !important;
     height: 50px !important;
-    line-height: 0px !important;
     padding: 0 !important;
+}
+
+.ant-layout-header {
+    line-height: 0px !important;
 }
 
 .navbar a {

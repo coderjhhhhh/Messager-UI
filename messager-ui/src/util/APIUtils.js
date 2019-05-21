@@ -5,7 +5,7 @@ const request = (options) => {
         'Content-Type': 'application/json',
     })
 
-    headers.append('Authorization', 'Bearer ' + 'secretKey')
+    headers.append('Authorization', 'Bearer ' + localStorage.getItem(ACCESS_TOKEN))
 
     const defaults = {headers: headers};
     options = Object.assign({}, defaults, options);
@@ -60,6 +60,13 @@ export function signup(signupRequest) {
         url: API_BASE_URL + "/auth/signup",
         method: 'POST',
         body: JSON.stringify(signupRequest)
+    });
+}
+
+export function search(username) {
+    return request({
+        url: API_BASE_URL + "/users/getBySearch?username=" + username,
+        method: 'POST'
     });
 }
 

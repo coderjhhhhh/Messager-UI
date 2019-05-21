@@ -4,8 +4,10 @@
   "private": true,
   "dependencies": {
     "antd": "^3.16.3",
+    "auth0-js": "^9.10.2",
     "bootstrap": "^4.3.1",
     "react": "^16.8.6",
+    "react-autocomplete": "^1.8.1",
     "react-burger-menu": "^2.6.10",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
