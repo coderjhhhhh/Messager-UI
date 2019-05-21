@@ -6,6 +6,7 @@ import {
 import './AppHeader.css';
 import {Redirect} from 'react-router-dom'
 import {Layout, Menu, Dropdown, Icon} from 'antd';
+import Search from '../common/Search';
 import {signup} from "../util/APIUtils";
 
 const Header = Layout.Header;
@@ -48,10 +49,10 @@ class AppHeader extends Component {
             menuItems = [
                 <div className="navbar-auth-buttons">
                     <button onClick={this.redirectToLogin} type="button" className="btn btn-default">
-                        <span>Войти</span>
+                        <span>Sign in</span>
                     </button>
                     <button id={'signup'} onClick={this.redirectToSignup} type="button" className="btn btn-default">
-                        <span>Регистрация</span>
+                        <span>Sign up</span>
                     </button>
                 </div>
             ];
@@ -63,6 +64,7 @@ class AppHeader extends Component {
                     <div className="app-title">
                         <Link to="/">Messager</Link>
                     </div>
+                    <Search/>
                     {menuItems}
                 </div>
             </Header>
